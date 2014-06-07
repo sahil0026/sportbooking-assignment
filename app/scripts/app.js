@@ -1,15 +1,22 @@
 'use strict';
 
-angular
-  .module('sportbookingAssignmentApp', [
+angular.module('sportbookingAssignmentApp', [
     'ngResource',
     'ngRoute'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/description.html',
+        controller: 'DescriptionCtrl'
+      })
+      .when('/map', {
+        templateUrl: 'views/map.html',
+        controller: 'MapCtrl'
+      })
+      .when('/movies', {
+        templateUrl: 'views/movies.html',
+        controller: 'MoviesCtrl'
       })
       .otherwise({
         redirectTo: '/'
