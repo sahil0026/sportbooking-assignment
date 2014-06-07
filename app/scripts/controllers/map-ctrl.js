@@ -1,25 +1,15 @@
 'use strict';
 
 angular.module('sportbookingAssignmentApp')
-	.controller('MapCtrl',['$scope',function($scope){
+	.controller('MapCtrl',['$scope','data',function($scope , data){
 
-		var mapOptions = {
-			center: new google.maps.LatLng(-33.8688, 151.2195),
-			zoom: 13,
-		};
-
-
-		var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-
-		var autocompleteOptions = {
-			componentRestrictions: {country: 'de'}
-		};
+		var map = new google.maps.Map(document.getElementById('map-canvas'),data.mapOptions);
 
 		var input = document.getElementById('pac-input');
 
-		map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
+		map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-		var autocomplete = new google.maps.places.Autocomplete(input,autocompleteOptions);
+		var autocomplete = new google.maps.places.Autocomplete(input,data.autocompleteOptions);
 		autocomplete.bindTo('bounds', map);
 
 		var infowindow = new google.maps.InfoWindow();
