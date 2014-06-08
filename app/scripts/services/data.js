@@ -3,17 +3,17 @@
 angular.module('sportbookingAssignmentApp')
 	.service('data',function(){
 	
-		this.map_options = {
-			center: new google.maps.LatLng(52.31, 13.24),
+		this.mapOptions = {
+		center: new google.maps.LatLng(52.31, 13.24),
 			zoom: 10,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 
-		this.marker_options = {
+		this.markerOptions = {
 			anchorPoint : new google.maps.Point(0, -29)
 		};
 
-		this.autocomplete_options = {
+		this.autocompleteOptions = {
 			componentRestrictions: {country: 'de'}
 		};
 
@@ -28,14 +28,14 @@ angular.module('sportbookingAssignmentApp')
 			  ].join(' ');
 			}
 			return address;
-		}
+		};
 
 		this.setPlace = function(placeObj){
 			this.place = placeObj;
 		};
 
-		this.setMarkerOptions = function(marker_options){
-			this.marker_options = marker_options;
+		this.setMarkerOptions = function(options){
+			this.markerOptions = options;
 		};
 
   });

@@ -4,8 +4,8 @@ angular.module('sportbookingAssignmentApp')
 	.controller('MapCtrl',['$scope','data',function($scope , data){
 		var input = document.getElementById('pac-input');
 
-		$scope.map = new google.maps.Map(document.getElementById('map-canvas'),data.map_options);
-		$scope.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);			
+		$scope.map = new google.maps.Map(document.getElementById('map-canvas'),data.mapOptions);
+		$scope.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 		
 
 		$scope.getMapData = function(){
@@ -21,7 +21,7 @@ angular.module('sportbookingAssignmentApp')
 		};
 
 		$scope.showMarker = function(){
-			$scope.marker = new google.maps.Marker(data.marker_options);
+			$scope.marker = new google.maps.Marker(data.markerOptions);
 			if(data.place){
 				$scope.marker.setPosition(data.place.geometry.location);
 			}
@@ -31,7 +31,7 @@ angular.module('sportbookingAssignmentApp')
 
 		$scope.getMapData();
 
-		$scope.autocomplete = new google.maps.places.Autocomplete(input,data.autocomplete_options);
+		$scope.autocomplete = new google.maps.places.Autocomplete(input,data.autocompleteOptions);
 		$scope.autocomplete.bindTo('bounds', $scope.map);
 
 		var infowindow = new google.maps.InfoWindow();
@@ -58,18 +58,17 @@ angular.module('sportbookingAssignmentApp')
 
 			// Initialize marker
 			data.setMarkerOptions({
-			  url: place.icon,
-			  size: new google.maps.Size(71, 71),
-			  origin: new google.maps.Point(0, 0),
-			  anchor: new google.maps.Point(17, 34),
-			  scaledSize: new google.maps.Size(35, 35)
+				url: place.icon,
+				size: new google.maps.Size(71, 71),
+				origin: new google.maps.Point(0, 0),
+				anchor: new google.maps.Point(17, 34),
+				scaledSize: new google.maps.Size(35, 35)
 			});
 
 			$scope.showMarker();
 
 			infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + data.getAddress());
-    		infowindow.open($scope.map, $scope.marker);
-
+		  infowindow.open($scope.map, $scope.marker);
 		});
 
   }]);

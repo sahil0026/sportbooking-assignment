@@ -2,20 +2,23 @@
 
 angular.module('sportbookingAssignmentApp')
   .controller('MainCtrl', function ($scope) {
-    	$scope.activeTab = 0;
+		  // Initialize the active tab to Description
+		  $scope.activeTab = 0;
 
-    	$scope.setActiveTab = function(tabIndex){
-    		$scope.activeTab = tabIndex;
-    	};
+		  // Setter for current active tab on home screen
+		  $scope.setActiveTab = function(tabIndex){
+		    $scope.activeTab = tabIndex;
+		  };
 
-		$scope.getActiveTab = function(){
-			if ($scope.activeTab == 0){
-				return 0;
-			}else if($scope.activeTab == 1){
-				return 1;
-			}else{
-				return 2;
-			}
-		};
+		  // Getter for current active tab on home screen
+		  $scope.getActiveTab = function(){
+			  if ($scope.activeTab === 0){
+				  return 0;
+			  }else if($scope.activeTab === 1){
+				  return 1;
+			  }else{
+				  return 2;
+			  }
+		  };
 
-  });
+    });
