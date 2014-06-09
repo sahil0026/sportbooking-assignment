@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('sportbookingAssignmentApp')
-	.controller('MoviesCtrl',function(){
+	.controller('MoviesCtrl',['$scope',function($scope){
 
-});
+		$scope.pageClass = "moviesPage";
+}]);

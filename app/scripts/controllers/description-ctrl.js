@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('sportbookingAssignmentApp')
-	.controller('DescriptionCtrl',function(){
+	.controller('DescriptionCtrl',['$scope',function($scope){
 
-});
+		$scope.pageClass = "descriptionPage";
+}]);

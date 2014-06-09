@@ -29,7 +29,7 @@
         <hr></hr>
       </div>
 
-      <div class="app_container" style="height:600px;" ng-view=""></div>
+      <div class="app_container {{pageClass}}" style="height:600px;" ng-view=""></div>
 
       <!-- Page Footer -->
       <div class="footer">
@@ -46,6 +46,7 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
 
     <!-- Controllers -->
     <script src="scripts/app.js"></script>

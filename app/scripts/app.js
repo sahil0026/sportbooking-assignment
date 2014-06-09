@@ -2,7 +2,8 @@
 
 angular.module('sportbookingAssignmentApp', [
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'ngAnimate'
   ])
   .config(function ($routeProvider) {
     $routeProvider

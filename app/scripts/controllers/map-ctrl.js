@@ -2,6 +2,9 @@
 
 angular.module('sportbookingAssignmentApp')
 	.controller('MapCtrl',['$scope','data',function($scope , data){
+
+		$scope.pageClass = "mapPage";
+
 		var input = document.getElementById('pac-input');
 
 		$scope.map = new google.maps.Map(document.getElementById('map-canvas'),data.mapOptions);
