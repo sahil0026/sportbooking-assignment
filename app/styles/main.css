@@ -65,13 +65,8 @@ body {
 /* ANIMATIONS
 ============================================================================= */
 
-.page.ng-leave  { z-index:9999; }
-.page.ng-enter  { z-index:8888; }
-
-/* page specific animations ------------------------ */
-
-/* home -------------------------- */
-.descriptionPage.ng-leave         {
+/* Description tab -------------------------- */
+.descriptionTab.ng-leave         {
   -webkit-transform-origin: 0% 0%;
   -webkit-animation: rotateFall 1s both ease-in;
   -moz-transform-origin: 0% 0%;
@@ -79,26 +74,26 @@ body {
   transform-origin: 0% 0%;
   animation: rotateFall 1s both ease-in;
 }
-.descriptionPage.ng-enter     {  
+.descriptionTab.ng-enter     {  
   -webkit-animation:scaleUp 0.5s both ease-in;
   -moz-animation:scaleUp 0.5s both ease-in;
   animation:scaleUp 0.5s both ease-in;    
 }
 
-/* about ------------------------ */
-.mapPage.ng-leave        {
+/* Map tab ------------------------ */
+.mapTab.ng-leave        {
   -webkit-animation:slideOutLeft 0.5s both ease-in;
   -moz-animation:slideOutLeft 0.5s both ease-in;
   animation:slideOutLeft 0.5s both ease-in;   
 }
-.mapPage.ng-enter    {  
+.mapTab.ng-enter    {  
   -webkit-animation:slideInRight 0.5s both ease-in;
   -moz-animation:slideInRight 0.5s both ease-in;
   animation:slideInRight 0.5s both ease-in;    
 }
 
-/* contact ---------------------- */
-.moviesPage.ng-leave      {
+/* Movies tab ---------------------- */
+.moviesTab.ng-leave      {
   -webkit-transform-origin: 50% 50%;
   -webkit-animation: rotateOutNewspaper .5s both ease-in;
   -moz-transform-origin: 50% 50%;
@@ -106,7 +101,7 @@ body {
   transform-origin: 50% 50%;
   animation: rotateOutNewspaper .5s both ease-in;
 }
-.moviesPage.ng-enter    { 
+.moviesTab.ng-enter    { 
   -webkit-animation:slideInUp 0.5s both ease-in;
   -moz-animation:slideInUp 0.5s both ease-in;
   animation:slideInUp 0.5s both ease-in;  

@@ -3,7 +3,7 @@
 angular.module('sportbookingAssignmentApp')
 	.controller('MapCtrl',['$scope','data',function($scope , data){
 
-		$scope.pageClass = "mapPage";
+		$scope.tabClass = 'mapTab';
 
 		var input = document.getElementById('pac-input');
 
