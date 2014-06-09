@@ -7,10 +7,12 @@ angular.module('sportbookingAssignmentApp')
 
 		var input = document.getElementById('pac-input');
 
+		// Initialize the google map with init Map options
 		$scope.map = new google.maps.Map(document.getElementById('map-canvas'),data.mapOptions);
+		// Position search box inside Google Maps
 		$scope.map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 		
-
+		// Function to load the last viewed map
 		$scope.getMapData = function(){
 			if(data.place){
 				// If the place has a geometry, then present it on a map.
@@ -23,6 +25,7 @@ angular.module('sportbookingAssignmentApp')
 			}
 		};
 
+		// Function to show marker on the google map
 		$scope.showMarker = function(){
 			$scope.marker = new google.maps.Marker(data.markerOptions);
 			if(data.place){
@@ -33,23 +36,24 @@ angular.module('sportbookingAssignmentApp')
 		};
 
 		$scope.getMapData();
+		$scope.showMarker();
 
+		// Initialize autocomplete feature with Country restrictions limited to Germany(Code: 'DE')
 		$scope.autocomplete = new google.maps.places.Autocomplete(input,data.autocompleteOptions);
 		$scope.autocomplete.bindTo('bounds', $scope.map);
 
-		var infowindow = new google.maps.InfoWindow();
-
-		$scope.showMarker();
-		
 		$scope.$watch('map',function(){
 			$scope.autocomplete.bindTo('bounds', $scope.map);
 		});
 
+		// Initialize infowindow for selected location & will be shown just above marker
+		var infowindow = new google.maps.InfoWindow();
 
        // Listen for the event fired when the user selects an item from the
        // pick list. Retrieve the matching places for that item.
 		google.maps.event.addListener($scope.autocomplete, 'place_changed',function() {
 			infowindow.close();
+			$scope.marker.setVisible(false);
 			var place = $scope.autocomplete.getPlace();
 			if (!place.geometry) {
 			  return;
