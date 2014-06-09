@@ -20,7 +20,7 @@ describe('Controller: MainCtrl', function () {
     expect(MainCtrl).toBeDefined();
   });
 
-  it('should attach a list of awesomeThings to the scope', function () {
+  it('active tab should be initialized to 0', function () {
     expect(scope.activeTab).toBe(0);
   });
 
@@ -48,7 +48,7 @@ describe('Controller: MainCtrl', function () {
     });
   });
 
-  it('Movies Route should match to Movies View', function() {
+  it('Movies Route should match to Movies Controller', function() {
     inject(function($route) {
       expect($route.routes['/movies'].controller).toBe('MoviesCtrl');
     });

@@ -26,4 +26,8 @@ describe('Controller: MoviesCtrl', function () {
     expect(moviesCtrl).toBeDefined();
   });
 
+  it('App container class should be moviesTab',function(){
+    expect(moviesScope.tabClass).toBe('moviesTab');
+  });
+
 });

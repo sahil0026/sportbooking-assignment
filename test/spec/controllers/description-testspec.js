@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: MoviesCtrl', function () {
+describe('Controller: DescriptionCtrl', function () {
 
   // load the controller's module
   beforeEach(module('sportbookingAssignmentApp'));
@@ -10,13 +10,9 @@ describe('Controller: MoviesCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    mainCtrl = $controller('MainCtrl', {
-      $scope: scope
-    });
-
 
     descriptionScope = scope.$new();
-    descriptionCtrl = $controller('MoviesCtrl', {
+    descriptionCtrl = $controller('DescriptionCtrl', {
       $scope: descriptionScope
     });
 
@@ -24,6 +20,10 @@ describe('Controller: MoviesCtrl', function () {
 
   it('DescriptionCtrl should be defined', function(){
     expect(descriptionCtrl).toBeDefined();
+  });
+
+  it('App container class should be descriptionTab',function(){
+    expect(descriptionScope.tabClass).toBe('descriptionTab');
   });
 
 });
